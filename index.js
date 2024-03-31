@@ -27,12 +27,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// mongoose.connect('mongodb+srv://')
-// .then(()=>{
-//     console.log('Conectado com sucesso');
-// }).catch(error=>{console.log('Erro: ', error)});
-
-const categoryRoutes = require('./controller/ProductionController');
+const categoryRoutes = require('./controller/ProductionController', './controller/Production02Controller');
 app.use('/api', categoryRoutes);
 
 connectDB().then(() => {
